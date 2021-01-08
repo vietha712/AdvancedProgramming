@@ -166,6 +166,31 @@ void add(double **firstMatrix,
     }
 }
 
+// Matrix multiply matrix
+void mult(double **firstMatrix,
+          int firstMatrixRows,
+          int firstMatrixCols,
+          double **secondMatrix,
+          int secondMatrixRows,
+          int secondMatrixCols,
+          double **outputMatrix, 
+          int outputMatrixRows,
+          int outputMatrixCol)
+{
+    assert(firstMatrixCols == secondMatrixRows);
+
+    for(int i = 0; i < firstMatrixRows; ++i)
+    {
+        for(int j = 0; j < secondMatrixCols; ++j)
+        {
+            for(int k = 0; k < firstMatrixCols; ++k)
+            {
+                outputMatrix[i][j] += (firstMatrix[i][k] * secondMatrix[k][j]);
+            }
+        }
+    }
+}
+
 
 
 

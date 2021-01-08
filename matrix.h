@@ -19,3 +19,13 @@ void add(double **firstMatrix,
          double **outputMatrix, 
          int outputMatrixRows,
          int outputMatrixCols);
+
+void mult(double **firstMatrix,
+          int firstMatrixRows,
+          int firstMatrixCols,
+          double **secondMatrix,
+          int secondMatrixRows,
+          int secondMatrixCols,
+          double **outputMatrix, 
+          int outputMatrixRows,
+          int outputMatrixCol);
