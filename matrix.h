@@ -1,3 +1,9 @@
+/*
+* Linear Algebra from assignment 3
+* Implemented By Ha The Viet
+* Date: 08/01/2021
+*/
+
 double** allocate(const int& numRows, const int& numCols);
 
 void deallocate(double** matrix, int numRows, int numCols);

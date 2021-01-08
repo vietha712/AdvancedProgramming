@@ -1,3 +1,9 @@
+/*
+* Linear Algebra from assignment 3
+* Implemented By Ha The Viet
+* Date: 08/01/2021
+*/
+
 #include "vector.h"
 #include <cstdlib>
 #include <iostream>
