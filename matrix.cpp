@@ -1,6 +1,10 @@
 #include "matrix.h"
 #include <cstdlib>
 #include "constants.h"
+#include <iostream>
+#include <cassert>
+
+using namespace std;
 
 double** allocate(const int& numCols, const int& numRows)
 {
@@ -83,7 +87,7 @@ static void getCoFactor(double** matrix,
     int indexRow, indexCol;
  
     // Looping for each element of the matrix
-    for indexRow = 0; indexRow < dimension; ++indexRow)
+    for(indexRow = 0; indexRow < dimension; ++indexRow)
     {
         for (indexCol = 0, i = 0, j = 0; indexCol < dimension; ++indexCol) 
         {
@@ -96,7 +100,7 @@ static void getCoFactor(double** matrix,
  
                 // Row is filled, so increase row index and
                 // reset col index
-                if (j == n - 1) 
+                if (j == dimension - 1) 
                 {
                     j = 0;
                     i++;
@@ -110,7 +114,7 @@ double det(int matrixDimension, double** matrix)
 {
     double determinant = 0;
     // temporary matrix to store cofactors
-    double tempMatrix[DIMENSION_SQUARE_MATRIX][DIMENSION_SQUARE_MATRIX];
+    double** tempMatrix;
     // multiplier sign
     int sign = 1;
     int i;
@@ -119,6 +123,12 @@ double det(int matrixDimension, double** matrix)
     if(1 == matrixDimension)
     {
         return matrix[0][0];
+    }
+
+    tempMatrix = new double* [DIMENSION_SQUARE_MATRIX];
+    for(i = 0; i < DIMENSION_SQUARE_MATRIX; ++i)
+    {
+        tempMatrix[i] = new double [DIMENSION_SQUARE_MATRIX];
     }
 
     for(i = 0; i < matrixDimension; ++i)
@@ -133,7 +143,28 @@ double det(int matrixDimension, double** matrix)
     return determinant;
 }
 
+void add(double **firstMatrix,
+         int firstMatrixRows,
+         int firstMatrixCols,
+         double **secondMatrix,
+         int secondMatrixRows,
+         int secondMatrixCols,
+         double **outputMatrix, 
+         int outputMatrixRows,
+         int outputMatrixCols)
+{
+    assert(firstMatrixRows == secondMatrixRows);
+    assert(firstMatrixCols == secondMatrixCols);
 
+    int i,j;
+    for(i = 0; i < outputMatrixRows; ++i)
+    {
+        for(j = 0; j < outputMatrixCols; ++j)
+        {
+            outputMatrix[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
+        }
+    }
+}
 
 
 
