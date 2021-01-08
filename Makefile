@@ -27,7 +27,7 @@ OBJ_FILES := $(OUTPUT_PATH)/matrix.o $(OUTPUT_PATH)/vector.o
 
 build: $(PROJ).cpp $(OBJ_FILES) build-dir
 	@echo "Compiling $(PROJ).cpp"
-	@$(CC) $(CC_OPT) -I$(INC_PATH) $< -o $(OUTPUT_PATH)/$(PROJ).exe 
+	@$(CC) $(CC_OPT) -I$(INC_PATH) $(OBJ_FILES) $(PROJ).cpp -o $(OUTPUT_PATH)/$(PROJ).exe 
 
 $(OUTPUT_PATH)/vector.o: vector.cpp
 	@$(CC) -c $(CC_OPT) -I$(INC_PATH) $< -o $(OUTPUT_PATH)/vector.o

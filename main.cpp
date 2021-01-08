@@ -23,7 +23,7 @@ int main(void)
     // === allocation
     v = allocate(size_v);
     w = allocate(size_w);
-    w = allocate(size_w);
+    t = allocate(size_t);
 
     // === initialization
     random(v, size_v);
@@ -51,9 +51,9 @@ int main(void)
     */
 
     double ** A1 , **A2 , **A;
-    int numRows_A1 (5) , numCols_A1 (5);
-    int numRows_A2 (5) , numCols_A2 (5);
-    int numRows_A (5) , numCols_A (5); 
+    int numRows_A1(5), numCols_A1(5);
+    int numRows_A2(5), numCols_A2(5);
+    int numRows_A(5), numCols_A(5); 
     // === allocation
     A1 = allocate(numRows_A1 , numCols_A1);
     A2 = allocate(numRows_A2 , numCols_A2);

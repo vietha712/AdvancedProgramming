@@ -4,7 +4,7 @@
 * Date: 08/01/2021
 */
 
-double** allocate(const int& numRows, const int& numCols);
+double** allocate(const int& numCols, const int numRows);
 
 void deallocate(double** matrix, int numRows);
 

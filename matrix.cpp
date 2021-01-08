@@ -12,7 +12,7 @@
 
 using namespace std;
 
-double** allocate(const int& numCols, const int& numRows)
+double** allocate(const int& numCols, const int numRows)
 {
     double **matrix;
     int i;
