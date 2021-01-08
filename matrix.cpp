@@ -191,6 +191,29 @@ void mult(double **firstMatrix,
     }
 }
 
+void mult(double **matrix,
+          int matrixRows,
+          int matrixCols,
+          double *vector,
+          int vectorLength,
+          double *output, 
+          int outputLength)
+{
+    assert(vectorLength == matrixCols);
+    assert(vectorLength == outputLength);
 
+    int i, j;
+    double sumPerRow;
+
+    for(i = 0; i < outputLength; ++i)
+    {
+        for(j = 0, sumPerRow = 0; j < matrixCols; ++j)
+        {
+            sumPerRow += (vector[j] * matrix[i][j]);
+        }
+
+        output[i] = sumPerRow;
+    }
+}
 
 

@@ -29,3 +29,11 @@ void mult(double **firstMatrix,
           double **outputMatrix, 
           int outputMatrixRows,
           int outputMatrixCol);
+
+void mult(double **firstMatrix,
+          int firstMatrixRows,
+          int firstMatrixCols,
+          double *vector,
+          int vectorLength,
+          double *output, 
+          int outputLength);
