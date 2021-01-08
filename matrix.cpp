@@ -27,11 +27,11 @@ double** allocate(const int& numCols, const int& numRows)
     return matrix;
 }
 
-void deallocate(double** matrix, int numCols, int numRows)
+void deallocate(double** matrix, int numRows)
 {
     int i;
 
-    for(i = 0; i < numCols; ++i)
+    for(i = 0; i < numRows; ++i)
     {
         delete[] matrix[i];
     }

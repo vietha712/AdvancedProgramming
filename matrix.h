@@ -6,7 +6,7 @@
 
 double** allocate(const int& numRows, const int& numCols);
 
-void deallocate(double** matrix, int numRows, int numCols);
+void deallocate(double** matrix, int numRows);
 
 void random(double** matrix, int numRows, int numCols);
 
