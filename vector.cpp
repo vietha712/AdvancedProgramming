@@ -83,7 +83,9 @@ double dot(double *firstVector,
     double product(0.0);
     double output;
 
-    for(i = 0; i < vectorLength; ++i)
+    assert(firstVectorLength == secondVectorLength);
+
+    for(i = 0; i < secondVectorLength; ++i)
     {
         product = firstVector[i] * secondVector[i];
         output += product;
